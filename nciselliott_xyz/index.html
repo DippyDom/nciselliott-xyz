@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c1422">
+  <meta name="description" content="IT news, security advisories and useful technical tools.">
+  <title>nciselliott.xyz — Technology & Security</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --background: #0c1422;
+      --panel: #131f31;
+      --panel-hover: #192940;
+      --text: #f1f5f9;
+      --muted: #a6b4c7;
+      --subtle: #718198;
+      --line: #26364b;
+      --accent: #38bdf8;
+      --max-width: 1040px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+    a { color: inherit; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    .wrap { width: min(var(--max-width), calc(100% - 36px)); margin-inline: auto; }
+    header { border-bottom: 1px solid var(--line); }
+    .header-inner {
+      min-height: 76px; display: flex; align-items: center;
+      justify-content: space-between; gap: 24px;
+    }
+    .brand { font-size: 1rem; font-weight: 750; letter-spacing: .035em; text-decoration: none; }
+    .brand-mark { color: var(--accent); }
+    nav { display: flex; flex-wrap: wrap; gap: 22px; }
+    nav a { color: var(--muted); text-decoration: none; font-size: .9rem; }
+    nav a:hover, .text-link:hover { color: var(--accent); }
+    .hero { padding: 68px 0 46px; }
+    .eyebrow { color: var(--accent); font-size: .76rem; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; }
+    h1 { margin: 12px 0 12px; font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.08; letter-spacing: -.05em; }
+    .hero p { max-width: 660px; margin: 0; color: var(--muted); font-size: 1.05rem; }
+    main { padding-bottom: 64px; }
+    .section { margin-top: 34px; }
+    .section-heading {
+      display: flex; align-items: baseline; justify-content: space-between;
+      gap: 16px; margin-bottom: 14px;
+    }
+    h2 { font-size: 1.15rem; margin: 0; letter-spacing: -.015em; }
+    .section-note { color: var(--subtle); font-size: .8rem; }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+    .feed-list { list-style: none; padding: 0; margin: 0; }
+    .feed-item { padding: 15px 18px; border-top: 1px solid var(--line); }
+    .feed-item:first-child { border-top: 0; }
+    .feed-item a { display: block; color: var(--text); text-decoration: none; font-weight: 600; }
+    .feed-item a:hover { color: var(--accent); }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px 12px; color: var(--subtle); font-size: .78rem; margin-top: 5px; }
+    .empty { padding: 18px; color: var(--muted); font-size: .9rem; }
+    .feed-fallback { display: flex; flex-wrap: wrap; gap: 16px; padding: 14px 18px; border-top: 1px solid var(--line); }
+    .text-link { color: var(--accent); text-decoration: none; font-size: .88rem; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .tool-group { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+    .tool-group h3 { margin: 0 0 12px; font-size: .98rem; }
+    .tool-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+    .tool-list a { color: var(--muted); text-decoration: none; font-size: .9rem; }
+    .tool-list a:hover { color: var(--accent); }
+    .tool-list a::after { content: " ↗"; color: var(--subtle); font-size: .8em; }
+    footer { border-top: 1px solid var(--line); color: var(--subtle); font-size: .82rem; padding: 22px 0 28px; }
+    @media (max-width: 760px) {
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero { padding-top: 52px; }
+    }
+    @media (max-width: 520px) {
+      .header-inner { align-items: flex-start; flex-direction: column; justify-content: center; padding: 17px 0; gap: 12px; }
+      nav { gap: 15px; }
+      .grid { grid-template-columns: 1fr; }
+      .section-heading { align-items: flex-start; flex-direction: column; gap: 3px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="nciselliott.xyz home">NCI<span class="brand-mark">ELLIOTT</span>.XYZ</a>
+      <nav aria-label="Main navigation">
+        <a href="#news">IT News</a>
+        <a href="#security">Security</a>
+        <a href="#tools">Tools</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap" id="top">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="eyebrow">Technology · Security · Tools</div>
+      <h1 id="page-title">Stay informed.</h1>
+      <p>Technology news, security advisories and useful IT tools, all in one place.</p>
+    </section>
+
+    <main>
+      <section class="section" id="news" aria-labelledby="news-title">
+        <div class="section-heading">
+          <h2 id="news-title">Latest IT news</h2>
+          <span class="section-note">Recent headlines from external feeds</span>
+        </div>
+        <div class="panel">
+          <ul class="feed-list" id="news-feed" aria-live="polite">
+            <li class="empty">Loading recent headlines…</li>
+          </ul>
+          <div class="feed-fallback">
+            <a class="text-link" href="https://www.bleepingcomputer.com/" target="_blank" rel="noopener noreferrer">BleepingComputer ↗</a>
+            <a class="text-link" href="https://arstechnica.com/" target="_blank" rel="noopener noreferrer">Ars Technica ↗</a>
+            <a class="text-link" href="https://www.theregister.com/" target="_blank" rel="noopener noreferrer">The Register ↗</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="security" aria-labelledby="security-title">
+        <div class="section-heading">
+          <h2 id="security-title">Security watch</h2>
+          <span class="section-note">Vendor advisories and vulnerability databases</span>
+        </div>
+        <div class="panel">
+          <ul class="feed-list" id="security-feed" aria-live="polite">
+            <li class="empty">Loading security advisories…</li>
+          </ul>
+          <div class="feed-fallback">
+            <a class="text-link" href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener noreferrer">CISA Known Exploited Vulnerabilities ↗</a>
+            <a class="text-link" href="https://msrc.microsoft.com/update-guide" target="_blank" rel="noopener noreferrer">Microsoft Security Update Guide ↗</a>
+            <a class="text-link" href="https://nvd.nist.gov/" target="_blank" rel="noopener noreferrer">NIST Vulnerability Database ↗</a>
+            <a class="text-link" href="https://www.ncsc.gov.uk/section/keep-up-to-date/alerts" target="_blank" rel="noopener noreferrer">UK NCSC Alerts ↗</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="tools" aria-labelledby="tools-title">
+        <div class="section-heading">
+          <h2 id="tools-title">IT toolbox</h2>
+          <span class="section-note">Direct links to established services</span>
+        </div>
+        <div class="grid">
+          <section class="tool-group" aria-labelledby="diagnostics-title">
+            <h3 id="diagnostics-title">DNS & email</h3>
+            <ul class="tool-list">
+              <li><a href="https://mxtoolbox.com/" target="_blank" rel="noopener noreferrer">MXToolbox</a></li>
+              <li><a href="https://dnschecker.org/" target="_blank" rel="noopener noreferrer">DNSChecker</a></li>
+              <li><a href="https://dmarcian.com/dmarc-inspector/" target="_blank" rel="noopener noreferrer">DMARC Inspector</a></li>
+              <li><a href="https://www.whatsmydns.net/" target="_blank" rel="noopener noreferrer">WhatsMyDNS</a></li>
+            </ul>
+          </section>
+          <section class="tool-group" aria-labelledby="investigation-title">
+            <h3 id="investigation-title">Security checks</h3>
+            <ul class="tool-list">
+              <li><a href="https://www.virustotal.com/" target="_blank" rel="noopener noreferrer">VirusTotal</a></li>
+              <li><a href="https://www.abuseipdb.com/" target="_blank" rel="noopener noreferrer">AbuseIPDB</a></li>
+              <li><a href="https://urlscan.io/" target="_blank" rel="noopener noreferrer">urlscan.io</a></li>
+              <li><a href="https://haveibeenpwned.com/" target="_blank" rel="noopener noreferrer">Have I Been Pwned</a></li>
+              <li><a href="https://www.ssllabs.com/ssltest/" target="_blank" rel="noopener noreferrer">SSL Labs</a></li>
+            </ul>
+          </section>
+          <section class="tool-group" aria-labelledby="microsoft-title">
+            <h3 id="microsoft-title">Microsoft 365</h3>
+            <ul class="tool-list">
+              <li><a href="https://admin.microsoft.com/" target="_blank" rel="noopener noreferrer">Microsoft 365 admin</a></li>
+              <li><a href="https://entra.microsoft.com/" target="_blank" rel="noopener noreferrer">Microsoft Entra</a></li>
+              <li><a href="https://intune.microsoft.com/" target="_blank" rel="noopener noreferrer">Microsoft Intune</a></li>
+              <li><a href="https://admin.exchange.microsoft.com/" target="_blank" rel="noopener noreferrer">Exchange admin</a></li>
+              <li><a href="https://security.microsoft.com/" target="_blank" rel="noopener noreferrer">Microsoft Defender</a></li>
+              <li><a href="https://portal.office.com/servicestatus" target="_blank" rel="noopener noreferrer">Microsoft service health</a></li>
+            </ul>
+          </section>
+          <section class="tool-group" aria-labelledby="network-title">
+            <h3 id="network-title">Network & web</h3>
+            <ul class="tool-list">
+              <li><a href="https://www.speedtest.net/" target="_blank" rel="noopener noreferrer">Speedtest</a></li>
+              <li><a href="https://radar.cloudflare.com/" target="_blank" rel="noopener noreferrer">Cloudflare Radar</a></li>
+              <li><a href="https://downforeveryoneorjustme.com/" target="_blank" rel="noopener noreferrer">Website availability check</a></li>
+            </ul>
+          </section>
+          <section class="tool-group" aria-labelledby="powertrack-title">
+            <h3 id="powertrack-title">Utilities</h3>
+            <ul class="tool-list">
+              <li><a href="https://powertrack.ssen.co.uk/" target="_blank" rel="noopener noreferrer">SSEN Power Track</a></li>
+            </ul>
+          </section>
+          <section class="tool-group" aria-labelledby="reference-title">
+            <h3 id="reference-title">Technical references</h3>
+            <ul class="tool-list">
+              <li><a href="https://learn.microsoft.com/" target="_blank" rel="noopener noreferrer">Microsoft Learn</a></li>
+              <li><a href="https://attack.mitre.org/" target="_blank" rel="noopener noreferrer">MITRE ATT&CK</a></li>
+              <li><a href="https://cve.mitre.org/" target="_blank" rel="noopener noreferrer">CVE Program</a></li>
+            </ul>
+          </section>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="wrap">nciselliott.xyz <span aria-hidden="true">·</span> Independent collection of technology and security resources.</div>
+  </footer>
+
+  <script>
+    "use strict";
+
+    const FEEDS = [
+      {
+        elementId: "news-feed",
+        url: "https://www.bleepingcomputer.com/feed/",
+        limit: 5,
+        source: "BleepingComputer",
+        fallbackText: "Headlines couldn't be loaded right now. Use the source links below."
+      },
+      {
+        elementId: "security-feed",
+        url: "https://www.cisa.gov/cybersecurity-advisories/alerts.xml",
+        limit: 5,
+        source: "CISA",
+        fallbackText: "Advisories couldn't be loaded right now. Use the official security links below."
+      }
+    ];
+
+    function makeText(tagName, className, value) {
+      const element = document.createElement(tagName);
+      if (className) element.className = className;
+      element.textContent = value;
+      return element;
+    }
+
+    function formatDate(value) {
+      if (!value) return "Recent";
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return "Recent";
+      return new Intl.DateTimeFormat(undefined, {
+        day: "numeric", month: "short", year: "numeric"
+      }).format(date);
+    }
+
+    function showFallback(list, message) {
+      list.replaceChildren();
+      const item = document.createElement("li");
+      item.className = "empty";
+      item.textContent = message;
+      list.appendChild(item);
+    }
+
+    async function loadFeed(feed) {
+      const list = document.getElementById(feed.elementId);
+      if (!list) return;
+
+      try {
+        // Calls your own Cloudflare Pages function natively
+        const proxyUrl = "/api/feed?url=" + encodeURIComponent(feed.url);
+        const response = await fetch(proxyUrl);
+        
+        if (!response.ok) throw new Error("Cloudflare Function error " + response.status);
+        
+        const xmlText = await response.text();
+        if (!xmlText || !xmlText.includes("<")) throw new Error("Invalid feed response");
+
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(xmlText, "text/xml");
+        
+        let items = Array.from(xmlDoc.querySelectorAll("item"));
+        if (items.length === 0) {
+          items = Array.from(xmlDoc.querySelectorAll("entry"));
+        }
+
+        if (items.length === 0) throw new Error("No feed items found");
+
+        const fragment = document.createDocumentFragment();
+
+        items.slice(0, feed.limit).forEach((itemXml) => {
+          const titleEl = itemXml.querySelector("title");
+          
+          let linkHref = "";
+          const linkEl = itemXml.querySelector("link");
+          if (linkEl) {
+            linkHref = linkEl.getAttribute("href") || linkEl.textContent || "";
+          }
+
+          const pubDateEl = itemXml.querySelector("pubDate, published, updated");
+
+          const title = titleEl ? titleEl.textContent.trim() : "";
+          const pubDate = pubDateEl ? pubDateEl.textContent.trim() : "";
+
+          if (!title || !linkHref) return;
+
+          let parsedUrl;
+          try { parsedUrl = new URL(linkHref); } catch { return; }
+          if (parsedUrl.protocol !== "https:" && parsedUrl.protocol !== "http:") return;
+
+          const item = document.createElement("li");
+          item.className = "feed-item";
+
+          const link = document.createElement("a");
+          link.href = parsedUrl.href;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.textContent = title;
+
+          const meta = document.createElement("div");
+          meta.className = "meta";
+          meta.appendChild(makeText("span", "", feed.source));
+          meta.appendChild(makeText("span", "", formatDate(pubDate)));
+
+          item.append(link, meta);
+          fragment.appendChild(item);
+        });
+
+        if (!fragment.childNodes.length) throw new Error("No valid links parsed");
+        list.replaceChildren(fragment);
+      } catch (error) {
+        console.error("Feed loading error:", error);
+        showFallback(list, feed.fallbackText);
+      }
+    }
+
+    FEEDS.forEach(loadFeed);
+  </script>
+</body>
+</html>
